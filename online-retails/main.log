@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.20)  12 APR 2016 21:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.20)  13 APR 2016 00:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -750,28 +750,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ])
 
-Package xcolor Warning: Incompatible color definition on input line 141.
+Package xcolor Warning: Incompatible color definition on input line 140.
 
 <figure/grafico_productos-1.pdf, id=11, 505.89pt x 505.89pt>
 File: figure/grafico_productos-1.pdf Graphic file (type pdf)
 
 <use figure/grafico_productos-1.pdf>
-Package pdftex.def Info: figure/grafico_productos-1.pdf used on input line 142.
+Package pdftex.def Info: figure/grafico_productos-1.pdf used on input line 141.
 
 (pdftex.def)             Requested size: 218.74991pt x 218.75581pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--143
-[]\OT1/ptm/m/n/10 Para co-no-cer el pro-duc-to mas ven-di-do, se
+Underfull \hbox (badness 2717) in paragraph at lines 138--142
+[]\OT1/ptm/m/n/10 Para co-no-cer la in-for-ma-cion del com-por-ta-mien-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--143
-\OT1/ptm/m/n/10 pro-ce-de con una gra-fi-ca que con-tie-ne la
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--143
-\OT1/ptm/m/n/10 can-ti-dad de pro-duc-tos por uni-dad ven-di-dos
+Underfull \hbox (badness 1466) in paragraph at lines 138--142
+\OT1/ptm/m/n/10 to de los pro-duc-tos, se pro-ce-de con una gra-fi-
  []
 
 
@@ -779,30 +774,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-Package xcolor Warning: Incompatible color definition on input line 148.
+Package xcolor Warning: Incompatible color definition on input line 177.
 
 <figure/histograma_transacciones-1.pdf, id=12, 505.89pt x 505.89pt>
 File: figure/histograma_transacciones-1.pdf Graphic file (type pdf)
 
 <use figure/histograma_transacciones-1.pdf>
 Package pdftex.def Info: figure/histograma_transacciones-1.pdf used on input li
-ne 149.
+ne 178.
 (pdftex.def)             Requested size: 218.74991pt x 218.75581pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--150
+Underfull \hbox (badness 10000) in paragraph at lines 175--179
 []\OT1/ptm/m/n/10 Para co-no-cer los re-gis-tros de ven-tas de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--150
+Underfull \hbox (badness 10000) in paragraph at lines 175--179
 \OT1/ptm/m/n/10 las transac-cio-nes se gra-fi-ca la in-for-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--150
+Underfull \hbox (badness 10000) in paragraph at lines 175--179
 \OT1/ptm/m/n/10 ma-cion de las transac-cio-nes men-sua-les
  []
 
+[2 <./figure/grafico_productos-1.pdf> <./figure/histograma_transacciones-1.pdf>
+]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -814,7 +811,8 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2 <./figure/grafico_productos-1.pdf> <./figure/histograma_transacciones-1.pdf>
+[3
+
 ] (./main.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
@@ -824,23 +822,23 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5780 strings out of 494966
- 87851 string characters out of 6179559
+ 5779 strings out of 494966
+ 87836 string characters out of 6179559
  159996 words of memory out of 5000000
- 8886 multiletter control sequences out of 15000+600000
+ 8885 multiletter control sequences out of 15000+600000
  34399 words of font info for 64 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 68i,9n,98p,398b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,9n,98p,398b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 143626 bytes).
+Output written on main.pdf (3 pages, 144176 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

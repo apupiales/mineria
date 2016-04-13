@@ -3,6 +3,7 @@ options(java.parameters="-Xmx2048m")
 library(stargazer)
 library(ggplot2)
 library(lubridate)
+library(xtable)
 onlineRetails <- read.csv(file = "/home/raul/Documents/Maestria/2016-1/bigdata/proyecto-final/online-retail/online-retail.csv")
 onlineRetails <- subset(onlineRetails, !is.na(as.Date(InvoiceDate, format = "%y/%m/%d")))
 onlineRetails$Date = as.Date(onlineRetails$InvoiceDate, format = "%d/%m/%Y")
@@ -10,6 +11,7 @@ onlineRetails$Date = as.Date(onlineRetails$InvoiceDate, format = "%d/%m/%Y")
 datos.Product <- data.frame("StockCode" = unique(onlineRetails$StockCode))
 
 for(i in datos.Product$StockCode){
+datos.Product$Name[i == datos.Product$StockCode] = onlineRetails$Description[onlineRetails$StockCode==i]
 datos.Product$Quantity[i == datos.Product$StockCode] <-sum(onlineRetails$Quantity[onlineRetails$StockCode==i])
 datos.Product$UnitPrice[i == datos.Product$StockCode] <- onlineRetails$UnitPrice[onlineRetails$StockCode==i]
 datos.Product$Value[i == datos.Product$StockCode] <-sum(onlineRetails$Quantity[onlineRetails$StockCode==i] * onlineRetails$UnitPrice[onlineRetails$StockCode==i] )
@@ -38,10 +40,15 @@ datos.Date$Value[i == datos.Date$Date] <-sum(onlineRetails$Quantity[onlineRetail
   summarizeQuantity = data.frame(cantidad = onlineRetails$Quantity);
   stargazer(summarizeQuantity);
  @
- \item Informacion correspondiente al periodo de tiempo de la medicion
- <<informacionPeriodoMedicion, results='asis'>>=
-  range(onlineRetails$Date);
-  summary(onlineRetails$Date);
+ \item Fecha de inicio del periodo de tiempo de la medicion:
+ <<minDate, results='asis'>>=
+  minDate <- min(onlineRetails$Date);
+  print(minDate)
+ @
+  \item Fecha de fin del periodo de tiempo de la medicion:
+ <<maxDate, results='asis'>>=
+  maxDate <- max(onlineRetails$Date);
+  print(maxDate)
  @
   
  \item Información correspondiente a los productos.
@@ -50,15 +57,23 @@ datos.Date$Value[i == datos.Date$Date] <-sum(onlineRetails$Quantity[onlineRetail
   stargazer(summarizeUnitPrice);
  @
  
- \item Para conocer el producto mas vendido, se procede con una grafica que contiene la cantidad de productos por unidad vendidos
+ \item Para conocer la informacion del comportamiento de los productos, se procede con una grafica que contiene la cantidad de productos vendidos
   <<grafico_productos>>=
    ggplot(datos.Product,aes(x=StockCode, y = Quantity)) + geom_bar(stat="identity") + theme(axis.text.x=element_blank())
   @
-
-  \item Para conocer los registros de ventas de las transacciones se grafica la informacion de las transacciones mensuales
+ Finalmente se obtiene la siguiente informacion correspondiente a los productos.
+  \item Producto con mayor saldo de unidades vendidas
+   <<tabla_mayor_producto_vendido, results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
+    xtable(subset(datos.Product, datos.Product$Quantity == max(datos.Product$Quantity)), "Producto con mayor saldo de unidades vendidas")
+   @
+  \item Producto con menor saldo de unidades vendidas
+   <<tabla_menos_producto_vendido, results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
+    xtable(subset(datos.Product, datos.Product$Quantity == min(datos.Product$Quantity)),"Producto con menor saldo de unidades vendidas")
+   @
+ \item Para conocer los registros de ventas de las transacciones se grafica la informacion de las transacciones mensuales
   <<histograma_transacciones>>=
    ggplot(datos.Date,aes(x=Date, y = Value)) + geom_bar(stat="identity")
-  @
+ @
   
 \end{itemize}
 
