@@ -1,0 +1,86 @@
+%Tipo de Documento [Conferencia]
+
+\documentclass[conference]{IEEEtran}
+
+%BIBLIOTECAS
+
+% Este paquete se utiliza para generar texto o graficas de relleno.
+%\usepackage{blindtext, graphicx}
+%Biblioteca para graficas
+\usepackage{graphicx}
+%Biblioteca para lectura de caracteres ortográficos (tildes..etc. ) 
+\usepackage[utf8]{inputenc}
+%Biblioteca para graficos vectrizados.svg 
+\usepackage{svg}
+\usepackage{enumerate}
+%Biblioteca para enumerar figuras tablas.. etc en español 
+\usepackage[spanish, es-tabla]{babel}
+
+
+%INICIO DEL DOCUMENTO
+\begin{document}
+
+
+% TITULO DEL PAPER
+\title{Analitica de transacciones en linea relacionadas con el conjunto de datos 
+Online Retail}
+
+
+% NOMBRE DE LOS AUTORES
+\author{
+  \IEEEauthorblockN{Raul Alejandro Buitrago Castellanos}
+  %AUTOR 1	
+  \IEEEauthorblockA{Universidad Distrital\\
+  Francisco Jose de Caldas\\
+  Bogota, Colombia\\
+  Email: raulhabits@gmail.com}
+ %\and
+}
+
+%TITULO
+\maketitle
+
+\input{estructura-documento/abstract.tex} 
+
+%Iniciar Palabras Clave Formato IEEE
+\begin{IEEEkeywords}
+	Conjunto de datos, mineria de datos, cientifico de datos, bigdata, inteligencia de negocios.
+\end{IEEEkeywords}
+
+\input{estructura-documento/introduccion.tex}
+\input{estructura-documento/objetivos.tex}
+\input{estructura-documento/marco-teorico.tex}
+\input{estructura-documento/estado-arte.tex}
+\input{estructura-documento/metodologia.tex}
+\input{estructura-documento/preguntas-investigacion.tex}
+
+<<exploratorio, child='R/exploratorio.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
+@
+
+%BIBLIOGRAFÍA
+
+%ENTORNO {thebibliography}
+%Permite al autor listar las referencias utilizadas y citarlas en algun punto del texto.
+
+\begin{thebibliography}{1}
+		
+	\bibitem{biblio1}
+		B. Klaus and P. Horn, Robot Vision. Cambridge, MA: MIT Press, 1986. 
+	\bibitem{biblio2}
+		L. Stein, “Random patterns,” in Computers and You, J. S. Brake, Ed. New York: Wiley, 1994, pp. 55-70.
+	\bibitem{biblio3}
+		R. L. Myer, “Parametric oscillators and nonlinear materials,” in Nonlinear Optics, vol. 4, P. G. Harper and B. S.
+	\bibitem{biblio4}
+		Wherret, Eds. San Francisco, CA: Academic, 1977, pp. 47-160.
+	\bibitem{biblio5}
+		E. F. Moore, “Gedanken-experiments on sequential machines,” in Automata Studies (Ann. of Mathematical
+	\bibitem{biblio5}
+		Studies, no. 1), C. E. Shannon and J. McCarthy, Eds. Princeton, NJ: Princeton Univ. Press, 1965, pp. 129-153.
+	\bibitem{biblio6}
+		Westinghouse Electric Corporation (Staff of Technology and Science, Aerospace Div.), Integrated Electronic
+	\bibitem{biblio7}
+		Systems. Englewood Cliffs, NJ: Prentice-Hall, 1970. 
+
+\end{thebibliography}
+
+\end{document}
