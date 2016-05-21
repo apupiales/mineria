@@ -14,7 +14,8 @@
 \usepackage{svg}
 \usepackage{enumerate}
 %Biblioteca para enumerar figuras tablas.. etc en español 
-\usepackage[spanish, es-tabla]{babel}
+\usepackage[english]{babel}
+\usepackage{hyperref}
 
 
 %INICIO DEL DOCUMENTO
@@ -22,8 +23,7 @@
 
 
 % TITULO DEL PAPER
-\title{Analitica de transacciones en linea relacionadas con el conjunto de datos 
-Online Retail}
+\title{Data analysis of the Online Retails DataSet}
 
 
 % NOMBRE DE LOS AUTORES
@@ -44,7 +44,7 @@ Online Retail}
 
 %Iniciar Palabras Clave Formato IEEE
 \begin{IEEEkeywords}
-	Conjunto de datos, mineria de datos, cientifico de datos, bigdata, inteligencia de negocios.
+	Dataset, Data Mining, Big Data Analytics, Business intelligence.
 \end{IEEEkeywords}
 
 \input{estructura-documento/introduccion.tex}
@@ -52,9 +52,21 @@ Online Retail}
 \input{estructura-documento/marco-teorico.tex}
 \input{estructura-documento/estado-arte.tex}
 \input{estructura-documento/metodologia.tex}
-\input{estructura-documento/preguntas-investigacion.tex}
+\input{estructura-documento/variableRecognizing.tex}
 
-<<exploratorio, child='R/exploratorio.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
+<<setupResearchQuestions, child='R/setupResearchQuestions.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
+@
+
+<<ResearchQuestions, child='R/ResearchQuestions.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
+@
+
+<<exploratory, child='R/exploratory.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
+@
+
+<<multivariateAnalysis, child='R/MultivariateAnalysis.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
+@
+
+<<findingPatterns, child='R/findingPatterns.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
 @
 
 %BIBLIOGRAFÍA
@@ -64,22 +76,13 @@ Online Retail}
 
 \begin{thebibliography}{1}
 		
-	\bibitem{biblio1}
-		B. Klaus and P. Horn, Robot Vision. Cambridge, MA: MIT Press, 1986. 
-	\bibitem{biblio2}
-		L. Stein, “Random patterns,” in Computers and You, J. S. Brake, Ed. New York: Wiley, 1994, pp. 55-70.
-	\bibitem{biblio3}
-		R. L. Myer, “Parametric oscillators and nonlinear materials,” in Nonlinear Optics, vol. 4, P. G. Harper and B. S.
-	\bibitem{biblio4}
-		Wherret, Eds. San Francisco, CA: Academic, 1977, pp. 47-160.
-	\bibitem{biblio5}
-		E. F. Moore, “Gedanken-experiments on sequential machines,” in Automata Studies (Ann. of Mathematical
-	\bibitem{biblio5}
-		Studies, no. 1), C. E. Shannon and J. McCarthy, Eds. Princeton, NJ: Princeton Univ. Press, 1965, pp. 129-153.
-	\bibitem{biblio6}
-		Westinghouse Electric Corporation (Staff of Technology and Science, Aerospace Div.), Integrated Electronic
-	\bibitem{biblio7}
-		Systems. Englewood Cliffs, NJ: Prentice-Hall, 1970. 
+	\bibitem{biblio1} G. Canavos, Probabilidad y estadistica aplicaciones y metodos. Mc-Graw Hill, 1988. 
+	\bibitem{biblio2} H. Chen, BUSINESS INTELLIGENCE AND ANALYTICS: FROM BIG DATA TO BIG IMPACT, MIS Quarterly Vol. 36 No. 4, pp. 1165-1188/December 2012 
+	\bibitem{biblio3} Daqing Chen, Sai Liang Sain, and Kun Guo, Data mining for the online retail industry: A case study of RFM model-based customer segmentation using data mining, Journal of Database Marketing and Customer Strategy Management, Vol. 19, No. 3, pp. 197â€“208, 2012 
+	\bibitem{biblio4} Ashishkumar Singh, Grace Rumantir, Annie South, Blair Bethwaite, Proceedings of the 2014 International Conference on Big Data Science and Computing.
+	\bibitem{biblio5} A decision-making framework for precision marketing, Zhen You, Yain-Whar Si, Defu Zhang, XiangXiang Zeng, Stephen C.H. Leung c, Tao Li, Expert Systems with Applications, 42 (2015) 3357â€“3367.
+	\bibitem{knitr-book} XIE, Yihui. Dynamic documents with R and knitr. Chapman \& Hall. Second edition. 2015.  
+	\bibitem{latex-book} DE CASTRO KORGI, Rodrigo. El universo LATEX. Facultad de ciencias. Universidad Nacional de Colombia. Segunda edicion. 2003.  
 
 \end{thebibliography}
 

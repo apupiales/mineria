@@ -1,8 +1,8 @@
 %SECCIÓN 3. PREGUNTAS INVESTIGACION
 \section{Research Questions}
-A correct investigation begins with the right questions, then an optimal definition of what else will be the proposal of the research. In this case these are the proposals.
- \begin{itemize}
-  \item{Descriptive.}
+A correct investigation begins with the right questions, then an optimal definition of what else will be the proposal of the research. The following questions are used in this research, these questions must be classified according with the kind of it.
+
+  \subsection{Descriptive.}
   A descriptive question is used to identify and know the characteristics of the dataset.
   \begin{itemize}
    \item What's the min date of the measurement?
@@ -26,10 +26,10 @@ A correct investigation begins with the right questions, then an optimal definit
       sumDevolutions
     @
   \end{itemize}
-  \item{Exploratory.}
+  \subsection{Exploratory.}
    An exploratory question consists in the searching of patterns or relations to support an investigation question.
   \begin{itemize}
-   \item Which month had major sales and devolutions of products?
+   \item Which month had major product sales and devolutions?
     <<monthMajorSalesDevolutionsQuantity>>=
       ggplot(data=data.Month,aes(x=Index)) +  geom_line(aes(y=data.Month$PositiveQuantity), colour="blue") +  geom_line(aes(y=data.Month$NegativeQuantity),colour="red")
      @
@@ -49,11 +49,8 @@ A correct investigation begins with the right questions, then an optimal definit
       }
       countries <- countries[order(countries$PositiveQuantity),]
       countries$Index = 1:nrow(countries);
+      xtable(countries,"Information of buys in January of 2011")
       @
-    <<tableMonthJanuary2011, results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
-    xtable(countries,"Information of buys in January of 2011")
-   @
-       
    
    \item Which country had major sales and devolutions of products?
    <<countries, results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
@@ -61,17 +58,9 @@ A correct investigation begins with the right questions, then an optimal definit
    @   
    
   \end{itemize}
-  \item{Inferential.}
+  \subsection{Inferential.}
    An inferential question consists in the creation of an hypothesis to be solved analyzing the information.
   \begin{itemize}
    \item Was France the country with major sales in January of 2011?\\
-   The TableIII suggest that United Kingdom had the major sales in January of 2011
+   The Table III suggest that United Kingdom had the major sales in January of 2011
   \end{itemize}
- \end{itemize}
-
-
-
-
-
-
-
