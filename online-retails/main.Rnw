@@ -69,6 +69,17 @@
 <<findingPatterns, child='R/findingPatterns.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
 @
 
+
+\section{Conclusions}
+\begin{itemize}
+ \item The data analysis of the dataset allows establishing some relationships and patterns to describe the behavior of the data.
+ \item The critical task of the data analysis consists in understanding the dataset, the data preparation, and the tasks related with the patterns definition.
+ \item The linear regression and the clustering using the K-means algorithm are good options to analyze some behaviors of the marketing.
+ 
+ 
+\end{itemize}
+
+
 %BIBLIOGRAFÍA
 
 %ENTORNO {thebibliography}

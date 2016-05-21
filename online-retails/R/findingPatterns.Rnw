@@ -32,3 +32,5 @@ hcPositive <- hclust(positiveDendogram, method="complete")
 plot(hcPositive)
 rect.hclust(hcPositive, k=2)
 @
+
+

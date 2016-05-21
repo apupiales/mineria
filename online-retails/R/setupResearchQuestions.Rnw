@@ -6,17 +6,18 @@ if (!"ggplot2" %in% installed.packages()) install.packages("ggplot2")
 if (!"lubridate" %in% installed.packages()) install.packages("lubridate")
 if (!"xtable" %in% installed.packages()) install.packages("xtable")
 if (!"plyr" %in% installed.packages()) install.packages("plyr")
-if (!"plyr" %in% installed.packages()) install.packages("psych")
+if (!"cluster" %in% installed.packages()) install.packages("cluster")
 library(stargazer)
 library(ggplot2)
 library(lubridate)
 library(xtable)
 library(plyr)
 library(psych)
+library(cluster)
 @
 
 <<setup-dataset, include=FALSE, cache=TRUE>>=
-onlineRetails <- read.csv(file = "/home/raul/Documents/Maestria/2016-1/bigdata/proyecto-final/online-retail/online-retail.csv")
+onlineRetails <- read.csv(file = "./../data/online-retail.csv")
 
 onlineRetails <- subset(onlineRetails, !is.na(as.Date(InvoiceDate, format = "%y/%m/%d")))
 
