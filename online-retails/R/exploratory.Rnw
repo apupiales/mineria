@@ -4,8 +4,8 @@ En esta seccion se realizo un analisis sobre algunos escenarios a fin de verific
 
  La siguiente informacion contiene el resumen del analisis exploratorio de las variables a traves del periodo de medicion 
  <<date,  results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
- summaryYears <- data.frame("Variable"="Year", "mean"=mean(onlineRetails$Year), "min"=min(onlineRetails$Year), "max"=max(onlineRetails$Year), "var"=var(onlineRetails$Year), "sd"=sd(onlineRetails$Year))
- summaryMonth <- data.frame("Variable"="Month", "mean"=mean(onlineRetails$Month), "min"=min(onlineRetails$Month), "max"=max(onlineRetails$Month), "var"=var(onlineRetails$Month), "sd"=sd(onlineRetails$Month))
+ resumenPrecio <- data.frame("Variable"="Precio", "Media"=mean(Combustibles$precio), "Minimo"=min(Combustibles$precio), "Maximo"=max(Combustibles$precio), "Variable"=var(Combustibles$precio), "Desviacion Standard"=sd(Combustibles$precio))
+ resumenPeriodo <- data.frame("Variable"="Periodo", "Media"=mean(Combustibles$periodo), "Minimo"=min(Combustibles$periodo), "Maximo"=max(Combustibles$periodo), "Variable"=var(Combustibles$periodo), "Desviacion Estandar"=sd(Combustibles$periodo))
  summaryDay <- data.frame("Variable"="Day", "mean"=mean(onlineRetails$Day), "min"=min(onlineRetails$Day), "max"=max(onlineRetails$Day), "var"=var(onlineRetails$Day), "sd"=sd(onlineRetails$Day))
  summaryPositiveQuantity <- data.frame("Variable"="Sold", "mean"=mean(onlineRetails$PositiveQuantity), "min"=min(onlineRetails$PositiveQuantity), "max"=max(onlineRetails$PositiveQuantity), "var"=var(onlineRetails$PositiveQuantity), "sd"=sd(onlineRetails$PositiveQuantity))
  summaryNegativeQuantity <- data.frame("Variable"="Returned", "mean"=mean(onlineRetails$NegativeQuantity), "min"=min(onlineRetails$NegativeQuantity), "max"=max(onlineRetails$NegativeQuantity), "var"=var(onlineRetails$NegativeQuantity), "sd"=sd(onlineRetails$NegativeQuantity))
