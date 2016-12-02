@@ -2,8 +2,7 @@
 \section{Multivariate Analysis}
 In this section you'll find the correlation analysis of variables to check the importance of them. This analysis allows checking the influence of an attribute on other, this analysis is commonly used to discard any attribute if it isn't important for other attributes.\\
 <<pairs>>=
-finalData <- subset(data, select=IndexYear: NegativeQuantity)
- pairs.panels(finalData)
+ pairs.panels(info)
 @
 
 As you can see in the previous chart we can think some conclusions like these
