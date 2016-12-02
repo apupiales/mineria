@@ -1,22 +1,24 @@
 %SECCIÓN 3. PREGUNTAS INVESTIGACION
-\section{Information Recognizing}
-In this section will be described the data domain, the dataset, and the variables recognizing, and the SMART objectives.
+\section{Reconocimiento de la información}
+Quizas uno de los pasos más importantes  en el proceso de minería de datos se encuentra en el reconocimiento de la información disponible que forma parte del dominio del problema, el problema u objetivo que se busca analizar con dichos información y la caracterización de los diferentes datos que serán objeto del estudio.
 
- \subsection{The domain of the data.}
- One of the common uses of the business intelligence is oriented to the marketing, because all the organizations needs to know the current state of them, the history of their behavior, the capacity to satisfy the client requests and to increase their competitive.\\
- In this data analysis the dataset used is provided by  \href{http://archive.ics.uci.edu/ml/datasets/Online+Retail}{UCI on the official web site} and it contains some records related with the transactions of a store through a time period.
- \subsection{The Dataset}
-  Like the UCI web page says, the dataset contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail.The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers, it's made off 541909 records of online retails and is composed by a the next fields.
+ \subsection{Dominio de los datos y dataset.}
+ La información relacionada con los precios de la gasolina en Colombia, es sin duda un tema de interéz común para las instituciones estatales, privadas y ciudadanos en general, esto particularmente por la incidencia que tienen dichos precios en casi cualquier escenario, como el costo de vida de los ciudadanos, precios de operación de las empresas, transporte, etc. Es así como la información relacionada con el comportamiento de los precios de la gasolina en el país puede permitir la identificación de zonas críticas que pueden ser mayormente afectadas por estas fluctuaciones.
+
+Para este análisis se utilizaron los datos  del dataset “Precios de Combustibles” provistos por el portal de datos abiertos Colombia href{https://datos.gov.co}, el cual registra los precios de combustible en diferentes regiones del pais durante el 2016. A continuación se describen los campos que conforman este set de datos: 
  \begin{itemize}
-  \item{InvoiceNo.} Invoice number. Nominal, a 6-digit integral number uniquely assigned to each transaction. If this code starts with letter 'c', it indicates a cancellation. 
-  \item{StockCode.} Product (item) code. Nominal, a 5-digit integral number uniquely assigned to each distinct product. 
-  \item{Description.} Product (item) name. Nominal. 
-  \item{Quantity.} The quantities of each product (item) per transaction. Numeric.	
-  \item{InvoiceDate.} Invoice Date and time. Numeric, the day and time when each transaction was generated. 
-  \item{UnitPrice.} Unit price. Numeric, Product price per unit in sterling. 
-  \item{CustomerID.} Customer number. Nominal, a 5-digit integral number uniquely assigned to each customer. 
-  \item{Country.} Country name. Nominal, the name of the country where each customer resides.
+  \item{CodigoDepartamento:} Este campo es el identificador único para cada uno de los departamentos de Colombia
+  \item{NombreDepartamento:} Este campo constituye el nombre por el cual son conocidos los diferentes de partamento de Colombia. 
+  \item{CodigoMunicipio:} Este campo es el identificador único para cada uno de los municipios de Colombia. En este set de datos, las ciudades tambien se incluyen en la lista de municipios. 
+  \item{Municipio:} Nombre con el cual son reconocidos los municipios.	
+  \item{Nombrecomercial:} Nombre del establecimiento comercial de expendio de gasolina. 
+  \item{Bandera: } Nombre de la marca de expendio de gasolina, por ejemplo texco. 
+  \item{Direccion:} Ubicación del establecimiento  de expendio de gasolina deacuerdo a la nomenclatura catastral de la ciudad. 
+  \item{Producto:} Nombre del combustible en venta.
+  \item{Precio:} valor comercial por galón del combustible en venta	.
+  \item{Estado:} Describe la disponivilidad del producto con los parámetros activo o inactivo.
+  \item{Fecharegistro:} Fecha en la que fue registrado el precio de la gasolina.
+  \item{Periodo:} Fecha del primer día del més en que fue realizado el registro del precio de gasolina.
  \end{itemize}
- \subsection{Smart Objectives}
- Check the behavior of the online retails from the past, to establish patterns, tendencies, and behaviors of the market.\\
- This objective must be the of high quality because the stakeholder may use it to take decisions.
+ \subsection{Objetivos smartSmart}
+ varificar el comportamiento de los precios de la gasolina en Colombia para establecer tendencias y comportamientos en los diferentes departamentos del pais.\\ Esta información podría ser utilizada en la troma de deciiones sobre regulaciones en los precis de la gasolina.
