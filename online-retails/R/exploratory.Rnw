@@ -1,8 +1,8 @@
 %SECCIÓN 3. PREGUNTAS INVESTIGACION
-\section{Exploratory Analysis}
-In this section was made an analysis in some scenarios to check the information related with the "frequencies" and the "central tendency measures"\\
+\section{Analisis Exploratorio}
+En esta seccion se realizo un analisis sobre algunos escenarios a fin de verificar la información asociada con las "frecuencias" y las "medidas de tendencia central"\\
 
- The following information contains the resume of the exploratory analysis of the variables through the measure period
+ La siguiente informacion contiene el resumen del analisis exploratorio de las variables a traves del periodo de medicion 
  <<date,  results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
  summaryYears <- data.frame("Variable"="Year", "mean"=mean(onlineRetails$Year), "min"=min(onlineRetails$Year), "max"=max(onlineRetails$Year), "var"=var(onlineRetails$Year), "sd"=sd(onlineRetails$Year))
  summaryMonth <- data.frame("Variable"="Month", "mean"=mean(onlineRetails$Month), "min"=min(onlineRetails$Month), "max"=max(onlineRetails$Month), "var"=var(onlineRetails$Month), "sd"=sd(onlineRetails$Month))
