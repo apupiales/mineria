@@ -1,9 +1,9 @@
 %SECCIÓN 3. PREGUNTAS INVESTIGACION
-\section{Research Questions}
-A correct investigation begins with the right questions, then an optimal definition of what else will be the proposal of the research. In this case these are the proposals.
+\section{Preguntas de investigacion}
+Una correcta investigacion comienza con las preguntas correctas, y a partir de ellas una definicion optima de lo que sera la propuesta investigativa. En este caso estas son las propuestas.
  \begin{itemize}
-  \item{Descriptive.}
-  A descriptive question is used to identify and know the characteristics of the dataset.
+  \item{Descriptiva.}
+  Una pregunta descriptiva es usada para identificar y conocer las caracteristicas del conjunto de datos.
   \begin{itemize}
    \item What's the min date of the measurement?
     <<minDate, results='inline'>>=
