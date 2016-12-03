@@ -4,16 +4,16 @@ En esta seccion se realizo un analisis sobre algunos escenarios a fin de verific
 
  La siguiente informacion contiene el resumen del analisis exploratorio de las variables a traves del periodo de medicion 
  <<date,  results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
- resumenPrecio <- data.frame("Variable"="Precio", "Media"=mean(Combustibles$precio), "Minimo"=min(Combustibles$precio), "Maximo"=max(Combustibles$precio), "Variable"=var(Combustibles$precio), "Desviacion Standard"=sd(Combustibles$precio))
- resumenPeriodo <- data.frame("Variable"="Periodo", "Media"=mean(Combustibles$periodo), "Minimo"=min(Combustibles$periodo), "Maximo"=max(Combustibles$periodo), "Variable"=var(Combustibles$periodo), "Desviacion Estandar"=sd(Combustibles$periodo))
- summaryDay <- data.frame("Variable"="Day", "mean"=mean(onlineRetails$Day), "min"=min(onlineRetails$Day), "max"=max(onlineRetails$Day), "var"=var(onlineRetails$Day), "sd"=sd(onlineRetails$Day))
- summaryPositiveQuantity <- data.frame("Variable"="Sold", "mean"=mean(onlineRetails$PositiveQuantity), "min"=min(onlineRetails$PositiveQuantity), "max"=max(onlineRetails$PositiveQuantity), "var"=var(onlineRetails$PositiveQuantity), "sd"=sd(onlineRetails$PositiveQuantity))
- summaryNegativeQuantity <- data.frame("Variable"="Returned", "mean"=mean(onlineRetails$NegativeQuantity), "min"=min(onlineRetails$NegativeQuantity), "max"=max(onlineRetails$NegativeQuantity), "var"=var(onlineRetails$NegativeQuantity), "sd"=sd(onlineRetails$NegativeQuantity))
+ resumenPrecio <- data.frame("Variable"="Precio", "Media"=mean(Combustibles$precio), "Minimo"=min(Combustibles$precio), "Maximo"=max(Combustibles$precio), "Varianza"=var(Combustibles$precio), "Desviacion Estandar"=sd(Combustibles$precio))
+ resumenPeriodo <- data.frame("Variable"="Periodo", "Media"=mean(Combustibles$periodo), "Minimo"=min(Combustibles$periodo), "Maximo"=max(Combustibles$periodo), "Varianza"=var(Combustibles$periodo), "Desviacion Estandar"=sd(Combustibles$periodo))
+ resumenProducto <- data.frame("Conteo"=summary(Combustibles$producto), "Varianza"=var(Combustibles$producto), "Desviacion Estandar"=sd(Combustibles$producto))
+ resumenDepartamento <- data.frame("Conteo"=summary(Combustibles$NombreDepartamento), "Varianza"=var(Combustibles$NombreDepartamento), "Desviacion Estandar"=sd(Combustibles$NombreDepartamento))
+ resumenBandera <- data.frame("Conteo"=summary(Combustibles$bandera), "Varianza"=var(Combustibles$bandera), "Desviacion Estandar"=sd(Combustibles$bandera))
  
- generalSummary <- rbind(summaryYears, summaryMonth, summaryDay, summaryPositiveQuantity, summaryNegativeQuantity)
+ resumenGeneral <- rbind(resumenPrecio, resumenPeriodo)
  
- xtable(generalSummary, "Summary of main variables")
+ xtable(resumenGeneral, "Resumen de variables continuas principales")
  
  @
  
- As you can see in the table, it's a general overview around the dataset because meeting the exploratory information of the data you can assume you know the data set.
+ Como se puede ver en la tabla, es una vista general acerca del conjunto de datos dado que el conocimiento de la informacion exploratoria es vital para el conocimiento del conjunto.
