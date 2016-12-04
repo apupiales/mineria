@@ -24,15 +24,15 @@ En esta seccion se realizo un analisis sobre algunos escenarios a fin de verific
  
  \subsection{Graficas de variables de interes relacionadas}
  
- En esta subseccion se encuentran disponibles un conjunto de graficas que relacionan la variable de interes o independiente con las demas que hacen parte de este analisis o independientes, puesto que el presente analisis esta orientado a establecer y determinar si existen relaciones entre las variables que puedan describir la variable independiente.\\
+ En esta subsección se encuentra disponible un conjunto de gráficas que relacionan la variable de interes o dependiente con las demas variables que hacen parte de este analisis. Esto está orientado orientado a establecer y determinar si existen relaciones entre las variables que puedan describir la variable dependiente.\\
  
- Para efectos de este analisis se tomaron las siguientes cuatro variables,
+ Para efectos de este analisis se tomaron las siguientes cinco variables,
  \begin{itemize}
-  \item{Precio promedio} Es la variable dependiente, correspondiente al precio promedio segun el criterio que describen las variables independientes
-  \item{Mes de la medicion} Es la variable independiente que contiene la lista de meses implicados en la medicion
-  \item{Producto} Es la variable independiente que contiene la lista de productos implicados en la medicion
-  \item{Departamento}  Es la variable independiente que contiene la lista de departamentos implicados en la medicion
-  \item{Bandera}  Es la variable independiente que contiene la lista de banderas implicados en la medicion
+  \item{Precio promedio} Es la variable dependiente, correspondiente al precio promedio segun el criterio que describen las variables independientes.
+  \item{Mes de la medición} Es la variable independiente que contiene la lista de meses  en los cuales fué realizada la medición.
+  \item{Producto} Es la variable independiente que contiene la lista de productos (diferentes tipos de combustible) implicados en la medicion.
+  \item{Departamento} Es la variable independiente que contiene la lista de departamentos de Colombia en los cuales fué realizada la medición.
+  \item{Bandera} Es la variable independiente que contiene la lista de empresas-marcas que ofrecen combustible en las estaciones de gasolina en el conjunto de datos.
  \end{itemize}
  <<precioMes>>=
  plot(infoAnyoMesPrecio$index, infoAnyoMesPrecio$preciopromedio, main="Mes de la medicion vs Precio promedio", xlab="Mes de la medicion", ylab="precio promedio")
@@ -47,8 +47,8 @@ En esta seccion se realizo un analisis sobre algunos escenarios a fin de verific
  @
   
  <<precioBandera>>=
- plot(infoBandera$index, infoBandera$preciopromedio, main="Bandera vs Precio promedio", xlab="Departamento", ylab="Precio promedio")
+ plot(infoBandera$index, infoBandera$preciopromedio, main="Bandera vs Precio promedio", xlab="Bandera", ylab="Precio promedio")
  @
  
  
- Al visualizar algunas de las graficas mencionadas podria intuirse, o plantearse que se podria llegar a representar la variable de dependiente a traves de un modelo que la relacione con las variables independientes.
+ Al visualizar algunas de las gráficas mencionadas es posible planetar que se podría podria llegar a representar la variable dependiente a través de un modelo que la relacione con las variables independientes.
