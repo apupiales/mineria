@@ -14,7 +14,7 @@
 \usepackage{svg}
 \usepackage{enumerate}
 %Biblioteca para enumerar figuras tablas.. etc en español 
-\usepackage[english]{babel}
+\usepackage[spanish]{babel}
 \usepackage{hyperref}
 
 
