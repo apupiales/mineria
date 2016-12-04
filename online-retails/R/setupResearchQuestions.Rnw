@@ -18,7 +18,7 @@ library(cluster)
 library(sqldf)
 @
 
-<<setup-dataset, include=FALSE, cache=TRUE>>=
+<<setup-dataset, include=FALSE>>=
 preciosCombustibles <- read.csv(file = "C:/Users/raul.buitrago/Documents/mineria/mineria/online-retails/data/Precios_de_Combustibles.csv")
 
 preciosCombustibles <- subset(preciosCombustibles, !is.na(as.Date(fecharegistro, format = "%m/%d/%y")))
@@ -38,20 +38,19 @@ preciosCombustibles$anyomes = paste(preciosCombustibles$anyo,'-',preciosCombusti
 preciosCombustibles <- preciosCombustibles[order(preciosCombustibles$anyo, preciosCombustibles$mes, preciosCombustibles$dia ),]
 
 
-infoAnyoMesPrecio <- sqldf("select anyomes, anyo, mes, avg(precio) 'preciopromedio' from preciosCombustibles group by anyomes, anyo, mes")
+infoAnyoMesPrecio <- sqldf("select anyomes, anyo, mes, avg(precio) preciopromedio from preciosCombustibles group by anyomes, anyo, mes")
 infoAnyoMesPrecio <- infoAnyoMesPrecio[order(infoAnyoMesPrecio$anyo, infoAnyoMesPrecio$mes),]
 infoAnyoMesPrecio$index <- 1:nrow(infoAnyoMesPrecio)
 
-infoDepartamento <- sqldf("select CodigoDepartamento, NombreDepartamento, avg(precio) 'preciopromedio' from preciosCombustibles group by CodigoDepartamento, NombreDepartamento")
+infoDepartamento <- sqldf("select CodigoDepartamento, NombreDepartamento, avg(precio) preciopromedio from preciosCombustibles group by CodigoDepartamento, NombreDepartamento")
 infoDepartamento <- infoDepartamento[order(infoDepartamento$preciopromedio),]
 infoDepartamento$index <- 1:nrow(infoDepartamento)
 
-infoProducto <- sqldf("select producto, avg(precio) 'preciopromedio' from preciosCombustibles group by producto")
+infoProducto <- sqldf("select producto, avg(precio) preciopromedio from preciosCombustibles group by producto")
 infoProducto <- infoProducto[order(infoProducto$preciopromedio), ]
 infoProducto$index <- 1:nrow(infoProducto)
 
-
-infoBandera <- sqldf("select bandera, avg(precio) 'preciopromedio' from preciosCombustibles group by bandera")
+infoBandera <- sqldf("select bandera, avg(precio) preciopromedio from preciosCombustibles group by bandera")
 infoBandera <- infoBandera[order(infoBandera$preciopromedio), ]
 infoBandera$index <- 1:nrow(infoBandera)
 
@@ -78,7 +77,9 @@ for(producto in infoProducto$producto) {
 }
 
 
-info <- sqldf("select mes, producto, departamento, bandera, avg(precio) 'preciopromedio' from info group by mes, producto, departamento, bandera")
+info <- sqldf("select mes, producto, departamento, bandera, avg(precio) preciopromedio from info group by mes, producto, departamento, bandera")
+
+Combustibles  <- read.csv(file = "C:/Users/raul.buitrago/Documents/mineria/mineria/online-retails/data/Precios_de_Combustibles.csv")
 
 
 @

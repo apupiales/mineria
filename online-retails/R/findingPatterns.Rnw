@@ -1,36 +1,65 @@
 %SECCIÓN 3. PREGUNTAS INVESTIGACION
-\section{Finding Patterns}
-In this section we are going to establish some patterns between the data using the linear regression algorithm and the K-means algorithm.\\
-\subsection{Linear Regression}
-This algorithm is used to build a model to reproduce the information drawing the nearest line to all the points.\\
-For this dataset we'll use this algorithm in the relationship between the month days and the quantity.
-<<linear-regression>>=
-model <- lm(data.Day$PositiveQuantity ~ data.Day$Index)
-plot(data.Day$Index, data.Day$PositiveQuantity)
-abline(model, col=2, lwd=5)
-@
+\section{Deteccion de patrones}
+In this section we are going to establish some patterns between the data using the KMEANS and linear regression algorithm.\\
 
-<<linear-regression2>>=
-model2 <- lm(data.Day$NegativeQuantity ~ data.Day$Index)
-plot(data.Day$Index, data.Day$NegativeQuantity)
-abline(model2, col=2, lwd=5)
-@
 
 \subsection{Clustering}
 This algorithm is used to build a model to reproduce the information drawing the nearest centroid to all the points of the cluster.\\
 For this dataset we'll use this algorithm in the relationship between the months days and the quantity.
 
-<<kmeans>>=
-positiveData <- data.frame("Index"=data.Month$Index, "Quantity"=data.Month$PositiveQuantity)
-kmeansPositive <- kmeans(positiveData, 2)
-plot(positiveData, col=kmeansPositive$cluster)
-points(kmeansPositive$centers)
-points(kmeansPositive$centers,pch=4, cex=4)
 
-positiveDendogram <- dist(positiveData)
-hcPositive <- hclust(positiveDendogram, method="complete")
-plot(hcPositive)
-rect.hclust(hcPositive, k=2)
+<<kmeansPeriodos>>=
+periodos <- data.frame("index"=infoAnyoMesPrecio$index, "valor"=infoAnyoMesPrecio$preciopromedio)
+kmeansPeriodos <- kmeans(periodos, 3)
+plot(periodos, col=kmeansPeriodos$cluster, main="Kmeans con k=3 para el mes de la medicion vs precio promedio", xlab="Mes de la medicion", ylab="precio promedio")
+points(kmeansPeriodos$centers)
+points(kmeansPeriodos$centers,pch=4, cex=4)
+@
+
+<<kmeansProductos>>=
+productos <- data.frame("index"=infoProducto$index, "valor"=infoProducto$preciopromedio)
+kmeansPeriodos <- kmeans(periodos, 3)
+plot(periodos, col=kmeansPeriodos$cluster, main="Kmeans con k=3 para el producto vs precio promedio", xlab="Producto", ylab="precio promedio")
+points(kmeansPeriodos$centers)
+points(kmeansPeriodos$centers,pch=4, cex=4)
+@
+
+<<kmeansDepartamento>>=
+periodos <- data.frame("index"=infoDepartamento$index, "valor"=infoDepartamento$preciopromedio)
+kmeansPeriodos <- kmeans(periodos, 3)
+plot(periodos, col=kmeansPeriodos$cluster, main="Kmeans con k=3 para el departamento vs precio promedio", xlab="Departamento", ylab="precio promedio")
+points(kmeansPeriodos$centers)
+points(kmeansPeriodos$centers,pch=4, cex=4)
+@
+
+<<kmeansBandera>>=
+periodos <- data.frame("index"=infoBandera$index, "valor"=infoBandera$preciopromedio)
+kmeansPeriodos <- kmeans(periodos, 2)
+plot(periodos, col=kmeansPeriodos$cluster, main="Kmeans con k=2 para la bandera vs precio promedio", xlab="Bandera", ylab="precio promedio")
+points(kmeansPeriodos$centers)
+points(kmeansPeriodos$centers,pch=4, cex=4)
 @
 
 
+
+\subsection{Regresion lineal}
+This algorithm is used to build a model to reproduce the information drawing the nearest line to all the points.\\
+For this dataset we'll use this algorithm in the relationship between the month days and the quantity.
+
+<<linear-regressionProducto>>=
+model <- lm(infoProducto$preciopromedio ~ infoProducto$index)
+plot(infoProducto$index, infoProducto$preciopromedio, main="Regresion lineal para el producto vs precio promedio", xlab="Producto", ylab="precio promedio")
+abline(model, col=2, lwd=5)
+@
+
+<<linear-regressionDepartamento>>=
+model <- lm(infoDepartamento$preciopromedio ~ infoDepartamento$index)
+plot(infoDepartamento$index, infoDepartamento$preciopromedio, main="Regresion lineal para el departamento vs precio promedio", xlab="Departamento", ylab="precio promedio")
+abline(model, col=2, lwd=5)
+@
+
+<<linear-regressionProductonBandera>>=
+model <- lm(infoBandera$preciopromedio ~ infoBandera$index)
+plot(infoBandera$index, infoBandera$preciopromedio, main="Regresion lineal para la bandera vs precio promedio", xlab="Bandera", ylab="precio promedio")
+abline(model, col=2, lwd=5)
+@

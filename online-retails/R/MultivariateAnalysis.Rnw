@@ -1,13 +1,12 @@
 %SECCIÓN 3. PREGUNTAS INVESTIGACION
 \section{Analisis Multivariado}
 En esta seccion el analisis de correlacion de variables para vaerificar la importancia de las mismas. Este analisis permite verificar la influencia de un atributo con respecto a otro, este analisis es usado comunmente para descartar atributos irrelevantes con respecto a los otros.\\
-<<pairs>>=
+<<pairsMultivariado>>=
  pairs.panels(info)
 @
 
-De acuerdo al anterior cuadro podemos obtener algunas conclusiones como estas
+De acuerdo al anterior cuadro podemos obtener algunas conclusiones como estas\\
 \begin{itemize}
- \item Applying the Pearson's correlation, we can discard the value related with the Country, because the correlation index is too near than 0
- \item The year and the month are some of the most important variables of the data analysis of this study.
- \item The Sales affects directly the Devolutions
+  \item Teniendo en cuenta el indice de correlacion de Pearson, se puede descartar del analisis a la variable asociada con el perdiodo (mes)  de la medicion, puesto que al cer tar cercano a 0 el indice de correlacion implica que no tiene mayor incidencia ni relevancia,
+  \item Las demas variables a pesar de tener una relacion entre ellas de forma poco representativa, si poseen una relacion directa con la variable dependiente (preciopromedio).
 \end{itemize}

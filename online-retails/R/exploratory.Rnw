@@ -1,19 +1,54 @@
 %SECCIÓN 3. PREGUNTAS INVESTIGACION
 \section{Analisis Exploratorio}
-En esta seccion se realizo un analisis sobre algunos escenarios a fin de verificar la información asociada con las "frecuencias" y las "medidas de tendencia central"\\
+En esta seccion se realizo un analisis sobre algunos escenarios a fin de verificar la informacion asociada con las frecuencias y las medidas de tendencia central\\
 
- La siguiente informacion contiene el resumen del analisis exploratorio de las variables a traves del periodo de medicion 
+ La siguiente informacion contiene el resumen del analisis exploratorio de la variable precio a traves del periodo de medicion
  <<date,  results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
- resumenPrecio <- data.frame("Variable"="Precio", "Media"=mean(Combustibles$precio), "Minimo"=min(Combustibles$precio), "Maximo"=max(Combustibles$precio), "Varianza"=var(Combustibles$precio), "Desviacion Estandar"=sd(Combustibles$precio))
- resumenPeriodo <- data.frame("Variable"="Periodo", "Media"=mean(Combustibles$periodo), "Minimo"=min(Combustibles$periodo), "Maximo"=max(Combustibles$periodo), "Varianza"=var(Combustibles$periodo), "Desviacion Estandar"=sd(Combustibles$periodo))
- resumenProducto <- data.frame("Conteo"=summary(Combustibles$producto), "Varianza"=var(Combustibles$producto), "Desviacion Estandar"=sd(Combustibles$producto))
- resumenDepartamento <- data.frame("Conteo"=summary(Combustibles$NombreDepartamento), "Varianza"=var(Combustibles$NombreDepartamento), "Desviacion Estandar"=sd(Combustibles$NombreDepartamento))
- resumenBandera <- data.frame("Conteo"=summary(Combustibles$bandera), "Varianza"=var(Combustibles$bandera), "Desviacion Estandar"=sd(Combustibles$bandera))
+
+  resumenPrecio <- data.frame("Variable"="Precio", "Media"=mean(Combustibles$precio), "Minimo"=min(Combustibles$precio), "Maximo"=max(Combustibles$precio), "Varianza"=var(Combustibles$precio), "Desviacion Estandar"=sd(Combustibles$precio))
+
+  resumenAnyoMes <- data.frame("Variable"="Anyo - mes", "Media"="NA", "Minimo"=min(infoAnyoMesPrecio$anyomes), "Maximo"=max(infoAnyoMesPrecio$anyomes), "Varianza"="NA", "Desviacion Estandar"="NA")
+
+  resumenProducto <- data.frame("Variable"="Producto", "Media"="NA", "Minimo"="NA", "Maximo"="NA", "Varianza"="NA", "Desviacion Estandar"="NA")
+  
+  resumenBandera <- data.frame("Variable"="Bandera", "Media"="NA", "Minimo"="NA", "Maximo"="NA", "Varianza"="NA", "Desviacion Estandar"="NA")
+  
+ resumenGeneral <- rbind(resumenPrecio, resumenAnyoMes, resumenProducto, resumenBandera)
+ resumenGeneral <- resumenPrecio
  
- resumenGeneral <- rbind(resumenPrecio, resumenPeriodo)
- 
- xtable(resumenGeneral, "Resumen de variables continuas principales")
+ xtable(resumenGeneral, "Resumen de la variable precio")
  
  @
  
- Como se puede ver en la tabla, es una vista general acerca del conjunto de datos dado que el conocimiento de la informacion exploratoria es vital para el conocimiento del conjunto.
+ Como se puede ver en la tabla, es una vista general acerca del conjunto de datos dado que el conocimiento de la informacion exploratoria es vital para el conocimiento del conjunto por ello vale la pena tener en cuenta que unos datos son de caracter cualitativo por lo tanto hay operaciones que no aplican.
+ 
+ \subsection{Graficas de variables de interes relacionadas}
+ 
+ En esta subseccion se encuentran disponibles un conjunto de graficas que relacionan la variable de interes o independiente con las demas que hacen parte de este analisis o independientes, puesto que el presente analisis esta orientado a establecer y determinar si existen relaciones entre las variables que puedan describir la variable independiente.\\
+ 
+ Para efectos de este analisis se tomaron las siguientes cuatro variables,
+ \begin{itemize}
+  \item{Precio promedio} Es la variable dependiente, correspondiente al precio promedio segun el criterio que describen las variables independientes
+  \item{Mes de la medicion} Es la variable independiente que contiene la lista de meses implicados en la medicion
+  \item{Producto} Es la variable independiente que contiene la lista de productos implicados en la medicion
+  \item{Departamento}  Es la variable independiente que contiene la lista de departamentos implicados en la medicion
+  \item{Bandera}  Es la variable independiente que contiene la lista de banderas implicados en la medicion
+ \end{itemize}
+ <<precioMes>>=
+ plot(infoAnyoMesPrecio$index, infoAnyoMesPrecio$preciopromedio, main="Mes de la medicion vs Precio promedio", xlab="Mes de la medicion", ylab="precio promedio")
+ @
+ 
+ <<precioProducto>>=
+ plot(infoProducto$index, infoProducto$preciopromedio, main="Producto vs precio promedio", xlab="Producto", ylab="Precio promedio")
+ @
+ 
+ <<precioDepartamento>>=
+ plot(infoDepartamento$index, infoDepartamento$preciopromedio, main="Departamento vs Precio promedio", xlab="Departamento", ylab="Precio promedio")
+ @
+  
+ <<precioBandera>>=
+ plot(infoBandera$index, infoBandera$preciopromedio, main="Bandera vs Precio promedio", xlab="Departamento", ylab="Precio promedio")
+ @
+ 
+ 
+ Al visualizar algunas de las graficas mencionadas podria intuirse, o plantearse que se podria llegar a representar la variable de dependiente a traves de un modelo que la relacione con las variables independientes.

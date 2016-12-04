@@ -23,7 +23,7 @@
 
 
 % TITULO DEL PAPER
-\title{Data analysis of the Online Retails DataSet}
+\title{Analisis del precio de la gasolina en Colombia durante el 2016}
 
 
 % NOMBRE DE LOS AUTORES
@@ -34,20 +34,14 @@
   Francisco Jose de Caldas\\
   Bogota, Colombia\\
   Email: apupiales@gmail.com}
- %\and
-}
-
-\author{
+ \and
   \IEEEauthorblockN{Johan Alfredo Romero}
   %AUTOR 1	
   \IEEEauthorblockA{Universidad Distrital\\
   Francisco Jose de Caldas\\
   Bogota, Colombia\\
   Email: jaromeroa@gmail.com}
- %\and
-}
-
-\author{
+  \and
   \IEEEauthorblockN{Sebastian Wisk}
   %AUTOR 1	
   \IEEEauthorblockA{Universidad Distrital\\
@@ -77,9 +71,6 @@
 <<setupResearchQuestions, child='R/setupResearchQuestions.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
 @
 
-<<ResearchQuestions, child='R/ResearchQuestions.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
-@
-
 <<exploratory, child='R/exploratory.Rnw', echo=FALSE, results='hide', warning=FALSE>>=  
 @
 
@@ -92,9 +83,9 @@
 
 \section{Conclusions}
 \begin{itemize}
- \item El analisis del conjunto de datos permite establecer algunas relaciones y patrones para describir el comportamiento de los datos.
- \item Las tareas clinicas del analisis de datos son el entendimiento del conjunto de datos, la preparacion de datos, y las tareas asociadas con la definición de patrones.
- \item La regresión lineal y el agrupamiento usando el algoritmo de K-medias son buenas opciones para analizar algunos comportamientos del mercado de combustibles.
+ \item The data analysis of the dataset allows establishing some relationships and patterns to describe the behavior of the data.
+ \item The critical task of the data analysis consists in understanding the dataset, the data preparation, and the tasks related with the patterns definition.
+ \item The linear regression and the clustering using the K-means algorithm are good options to analyze some behaviors of the marketing.
  
  
 \end{itemize}
