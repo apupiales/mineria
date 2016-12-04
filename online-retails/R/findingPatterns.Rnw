@@ -17,8 +17,8 @@ points(kmeansPeriodos$centers,pch=4, cex=4)
 @
 
 <<kmeansProductos>>=
-productos <- data.frame("index"=infoProducto$index, "valor"=infoProducto$preciopromedio)
-kmeansPeriodos <- kmeans(periodos, 3)
+periodos <- data.frame("index"=infoProducto$index, "valor"=infoProducto$preciopromedio)
+kmeansPeriodos <- kmeans(productos, 3)
 plot(periodos, col=kmeansPeriodos$cluster, main="Kmeans con k=3 para el producto vs precio promedio", xlab="Producto", ylab="precio promedio")
 points(kmeansPeriodos$centers)
 points(kmeansPeriodos$centers,pch=4, cex=4)
