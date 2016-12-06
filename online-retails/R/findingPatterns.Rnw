@@ -1,12 +1,10 @@
 %SECCIÓN 3. PREGUNTAS INVESTIGACION
 \section{Deteccion de patrones}
-In this section we are going to establish some patterns between the data using the KMEANS and linear regression algorithm.\\
+En esta seccion se utiliza el algoritmo KMeans y la regresion lineal para establecer patrones entre las diferentes variables del conjunto de datos analizado.
 
+\subsection{KMeans}
 
-\subsection{Clustering}
-This algorithm is used to build a model to reproduce the information drawing the nearest centroid to all the points of the cluster.\\
-For this dataset we'll use this algorithm in the relationship between the months days and the quantity.
-
+Esta tecnica de clustering permite representar graficamente la informacion realizando un agrupamiento de los datos, a partir de la ubicacion de una cantidad K de centroides mas cercanos a los puntos del grupo.\
 
 <<kmeansPeriodos>>=
 periodos <- data.frame("index"=infoAnyoMesPrecio$index, "valor"=infoAnyoMesPrecio$preciopromedio)
@@ -49,8 +47,8 @@ points(kmeansPeriodos$centers,pch=4, cex=4)
 En la grafica \textbf{\textit{Kmeans con k=2 para la bandera vs precio promedio}} se confrima la conclusion encontrada por observacion para la grafica de correlacion de precio promedio y bandera. En esta grafica se diferencian dos grupos, que son las banderas con muy bajo costo en el precio del combustible y las que manejan un precio promedio.
 
 \subsection{Regresion lineal}
-This algorithm is used to build a model to reproduce the information drawing the nearest line to all the points.\\
-For this dataset we'll use this algorithm in the relationship between the month days and the quantity.
+
+La regresion lineal es una tecnica utilizada para definir la recta mas cercana a todos los puntos que componen el conjunto de datos permitiendo la construccion de un modelo.
 
 <<linear-regressionProducto>>=
 model <- lm(infoProducto$preciopromedio ~ infoProducto$index)

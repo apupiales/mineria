@@ -2,7 +2,7 @@
 \section{Analisis Exploratorio}
 En esta seccion se realizo un analisis sobre algunos escenarios a fin de verificar la informacion asociada con las frecuencias y las medidas de tendencia central\\
 
- La siguiente informacion contiene el resumen del analisis exploratorio de la variable precio a traves del periodo de medicion
+ En el \textbf{\textit{Cuadro 1}} se encuentra el resumen del analisis exploratorio de la variable precio a traves del periodo de medicion
  <<date,  results='asis',echo=FALSE, warning=FALSE, message=FALSE>>=
 
   resumenPrecio <- data.frame("Variable"="Precio", "Media"=mean(Combustibles$precio), "Minimo"=min(Combustibles$precio), "Maximo"=max(Combustibles$precio), "Varianza"=var(Combustibles$precio), "Desviacion Estandar"=sd(Combustibles$precio))

@@ -58,7 +58,7 @@
 
 %Iniciar Palabras Clave Formato IEEE
 \begin{IEEEkeywords}
-	Set de datos, Minería de datos, Big Data Analytics, Inteligencia de negocios.
+	Conjunto de datos, Minería de datos, Big Data Analytics, Inteligencia de negocios.
 \end{IEEEkeywords}
 
 \input{estructura-documento/introduccion.tex}
