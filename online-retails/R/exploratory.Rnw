@@ -38,17 +38,24 @@ En esta seccion se realizo un analisis sobre algunos escenarios a fin de verific
  plot(infoAnyoMesPrecio$index, infoAnyoMesPrecio$preciopromedio, main="Mes de la medicion vs Precio promedio", xlab="Mes de la medicion", ylab="precio promedio")
  @
  
+ Enla grafica \textbf{\textit{Mes de la medicion vs precio promedio}} se puede observar que los precios en promedio se dividieron en tres periodos durante el 2016. Cada uno de estos periodos es aproximadamente de 4 meses. En general se observa un incremento de los precios promedio cuatrimestre a cuatrimestre.
+ 
  <<precioProducto>>=
  plot(infoProducto$index, infoProducto$preciopromedio, main="Producto vs precio promedio", xlab="Producto", ylab="Precio promedio")
  @
  
+ A partir de la grafica \textbf{\textit{Producto vs precio promedio}} y el orden establecido para los productos, se observa facilmente la clasificacion de productos segun su precio en orden ascendente (menor a mayor precio promedio).
+ 
  <<precioDepartamento>>=
  plot(infoDepartamento$index, infoDepartamento$preciopromedio, main="Departamento vs Precio promedio", xlab="Departamento", ylab="Precio promedio")
  @
+ 
+ En la grafica \textbf{\textit{Departamento vs precio promedio}} se observan tres grupos de departamentos de acuerdo con el precio promedio de los combustibles. Por un lado se tiene una segmentacion en los valores del precio de la gasolina, en la cual se pueden distinguir tres grupos.
   
  <<precioBandera>>=
  plot(infoBandera$index, infoBandera$preciopromedio, main="Bandera vs Precio promedio", xlab="Bandera", ylab="Precio promedio")
  @
  
+ En la grafica \textbf{\textit{Bandera vs Precio promedio}} se observa con claridad dos grupos, el primero de ellos corresponde con las banderas que tiene un precio promedio significativamente bajo, y otro con las banderas cuyos precios son altos.
  
  Al visualizar algunas de las gráficas mencionadas es posible planetar que se podría podria llegar a representar la variable dependiente a través de un modelo que la relacione con las variables independientes.

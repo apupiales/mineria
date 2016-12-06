@@ -81,7 +81,7 @@
 @
 
 
-\section{Conclusions}
+\section{Conclusioness}
 \begin{itemize}
  \item El precio promedio del combustible tiene correlación con el producto, el departamento donde es vendido y la bandera.
  \item La mayor correlación del precio promedio se da con la variable producto.

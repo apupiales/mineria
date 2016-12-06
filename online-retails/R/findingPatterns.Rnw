@@ -16,6 +16,8 @@ points(kmeansPeriodos$centers)
 points(kmeansPeriodos$centers,pch=4, cex=4)
 @
 
+En la grafica \textbf{\textit{Kmeans con k=3 para el mes de la medicion vs precio promedio}} se  confirma la conclusion encontrada por observacion para la grafica de correlacion de precio promedio y mes. En esta grafica se encuentran tres clusters que fragmentan el periodo de la medicion y que muestran tendencias en cuanto al precio promedio del combustible.
+
 <<kmeansProductos>>=
 periodos <- data.frame("index"=infoProducto$index, "valor"=infoProducto$preciopromedio)
 kmeansPeriodos <- kmeans(periodos, 3)
@@ -23,6 +25,8 @@ plot(periodos, col=kmeansPeriodos$cluster, main="Kmeans con k=3 para el producto
 points(kmeansPeriodos$centers)
 points(kmeansPeriodos$centers,pch=4, cex=4)
 @
+
+En la grafica \textbf{\textit{Kmeans con k=3 para el producto vs precio promedio}} se observan tres grupos de productos clasificados ascendente mente por su precio promedio. Estos grupos son los combustibles de bajo costo, los de costo promedio y los de alto costo.
 
 <<kmeansDepartamento>>=
 periodos <- data.frame("index"=infoDepartamento$index, "valor"=infoDepartamento$preciopromedio)
@@ -32,6 +36,8 @@ points(kmeansPeriodos$centers)
 points(kmeansPeriodos$centers,pch=4, cex=4)
 @
 
+En la grafica \textbf{\textit{Kmeans con k=3 para el departamento vs precio promedio}} se diferencian tres grupos de departamento, que son los departamento con precios bajo, medio y alto en promedio de combustible.
+
 <<kmeansBandera>>=
 periodos <- data.frame("index"=infoBandera$index, "valor"=infoBandera$preciopromedio)
 kmeansPeriodos <- kmeans(periodos, 2)
@@ -40,7 +46,7 @@ points(kmeansPeriodos$centers)
 points(kmeansPeriodos$centers,pch=4, cex=4)
 @
 
-
+En la grafica \textbf{\textit{Kmeans con k=2 para la bandera vs precio promedio}} se confrima la conclusion encontrada por observacion para la grafica de correlacion de precio promedio y bandera. En esta grafica se diferencian dos grupos, que son las banderas con muy bajo costo en el precio del combustible y las que manejan un precio promedio.
 
 \subsection{Regresion lineal}
 This algorithm is used to build a model to reproduce the information drawing the nearest line to all the points.\\
@@ -52,14 +58,21 @@ plot(infoProducto$index, infoProducto$preciopromedio, main="Regresion lineal par
 abline(model, col=2, lwd=5)
 @
 
+En la grafica \textbf{\textit{Regresion Lineal para el producto vs precio promedio}} se puede observar la relacion de linealidad del producto y el precio promedio de forma consistente. Se observa que la dispersion para este caso es tratable.
+
 <<linear-regressionDepartamento>>=
 model <- lm(infoDepartamento$preciopromedio ~ infoDepartamento$index)
 plot(infoDepartamento$index, infoDepartamento$preciopromedio, main="Regresion lineal para el departamento vs precio promedio", xlab="Departamento", ylab="precio promedio")
 abline(model, col=2, lwd=5)
 @
 
+En la grafica \textbf{\textit{Regresion lineal para el departamento vs precio promedio}} se puede observar la carente relacion de linealidad del departamento y el precio promedio. El resultado no obedece a una linealidad constante donde la dispersion impacta de manera negativa el uso de este modelo.
+
 <<linear-regressionProductonBandera>>=
 model <- lm(infoBandera$preciopromedio ~ infoBandera$index)
 plot(infoBandera$index, infoBandera$preciopromedio, main="Regresion lineal para la bandera vs precio promedio", xlab="Bandera", ylab="precio promedio")
 abline(model, col=2, lwd=5)
 @
+
+En la grafica \textbf{\textit{Regresion lineal para la bandera vs precio promedio}} se puede observar la carente relacion de linealidad de la bandera y el precio promedio. El resultado no obedece a una linealidad constante donde la dispersion impacta de manera negativa el uso de este modelo.
+
